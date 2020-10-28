@@ -134,7 +134,7 @@ var autocomplete = new Autocomplete({
 | `minChar`             | integer  | `0`    | minimum number of letters for search to start
 | `delay`               | integer  | `500`  | milliseconds after which search starts if there is no other input by the user
 | `list`                | array    | optional | array of strings to search for. This automatically disables AJAX calls.
-| `customSearch`        | function | optional | if ***list*** is provided, this will override the default list search function 
+| `customSearch`        | function | optional | if `list` is provided, this will override the default list search function. Default search function trims and lowercases the input and makes a simple regex search (`"^"+search.toLowerCase().trim()+".*$"`) on the list. It sorts the filtered values at the end.
 | `extraParentClasses`  | string   | optional | any additional classes for the wrapper element
 | `ajax`                | object   | optional | configuration object in case of using built-in XMLHttpRequest AJAX requests. Object attributes are listed below.
 | `beforeAjax`          | function | optional | this function manipulates the user input before search starts. For example, you can make the input lowercase
