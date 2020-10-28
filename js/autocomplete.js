@@ -166,7 +166,6 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
             showAutocompleteList(results, search)
             $icon_loading.classList.add("ac-hidden")
         }else if(manualAjax){
-            console.log(results, 'results')
             var results = await manualAjax(search);
             showAutocompleteList(results, search)
             $icon_loading.classList.add("ac-hidden")
@@ -175,9 +174,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
             request.open(ajax.method, ajax.url+(ajax.fields||"?search=")+search, true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
             request.onreadystatechange = function() {
-                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-                    console.log('succeed');
-                    console.log(request.responseText);
+                if (this.readyState == 4 && this.status == 200) {
                     if(ajax.responseHandler){
                         results = ajax.responseHandler(request.responseText)
                         showAutocompleteList(results, search)
@@ -186,9 +183,6 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
                         showAutocompleteList(request.responseText, search)
                         $icon_loading.classList.add("ac-hidden")
                     }
-                }else{
-                    console.log('server error');
-                    $icon_loading.classList.add("ac-hidden")
                 }
             };
             request.onerror = function(e) {
@@ -202,7 +196,6 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
 
     function showAutocompleteList(array, search){
         var results = array
-
         $list.innerHTML = "";
         if(results.length>0){
             for (var i = 0; i < results.length; i++) {
@@ -240,7 +233,6 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
     function resultClick(e){
         e.preventDefault()
         if(e.which != 1) return; // only progress on left mouse clicks
-        console.log('resultClick')
         $input.value = e.currentTarget.innerText
         clearList()
         submitHandler($input.value)

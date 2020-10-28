@@ -6,7 +6,7 @@
     display: inline-block;
 }
 .ac-wrapper input{
-    padding-right: 20px;
+    padding-right: 40px;
 }
 .ac-wrapper input.ac-list-open{
     border-bottom-left-radius: 0px;

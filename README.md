@@ -38,11 +38,11 @@ If you do not want custom styling as in examples here is the css with only core 
 ```
 
 ### CDN
-You can also use below CDN links
+You can also use below CDN links. Feel free to change version number with respect to the releases
 ```html
-<script src="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.1/js/autocomplete.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.1/css/autocomplete.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.1/css/autocomplete-core.css">
+<script src="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/js/autocomplete.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/css/autocomplete.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/css/autocomplete-core.css">
 ```
 
 Initialize Autocomplete object with your configurations
