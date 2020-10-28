@@ -19,7 +19,7 @@ This snippet:
 - :heart_eyes: user experience is **inspired from Google search**
 
 ## Demo
-- [JSfiddle]()
+- [JSfiddle](https://jsfiddle.net/giray123/y0wh7xmL/12/)
 - [Github Pages](https://giray123.github.io/javascript-autocomplete/)
 ## Usage
 
@@ -40,9 +40,9 @@ If you do not want custom styling as in examples here is the css with only core 
 ### CDN
 You can also use below CDN links
 ```html
-<script src="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/js/autocomplete.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/css/autocomplete.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/css/autocomplete-core.css">
+<script src="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.1/js/autocomplete.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.1/css/autocomplete.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.1/css/autocomplete-core.css">
 ```
 
 Initialize Autocomplete object with your configurations
