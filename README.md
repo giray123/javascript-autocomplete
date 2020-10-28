@@ -1,4 +1,6 @@
+<p align="center"><img src="img/social-preview.jpg"></p>
 <h1 align="center">Javascript Autocomplete</h1>
+<p align="center">Autocomplete snippet for HTML input fields built with native javascript</p>
 <p align="center">
   <img src="https://img.shields.io/david/giray123/javascript-autocomplete?style=for-the-badge" />
   <img src="https://img.shields.io/github/size/giray123/javascript-autocomplete/autocomplete.js?label=UNMINIFIED&logo=javascript&style=for-the-badge" />
@@ -7,7 +9,6 @@
 </p>
 
 
-<p align="center">Autocomplete snippet for HTML input fields built with native javascript</p>
 <p align="center"><img src="img/search_auto_ajax.gif"></p>
 
 This snippet:
