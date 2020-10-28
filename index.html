@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="autocomplete.css">
 </head>
 <body>
     <h1>Autocomplete for Native Javascript</h1>
@@ -20,14 +21,17 @@
                 method: "GET",
                 url: "https://kitsu.io/api/edge/anime",
                 withCredentials: false,
-                fields: "?fields[anime]=titles&page[limit]=20&filter[text]",
+                fields: "?fields[anime]=titles&page[limit]=10&filter[text]",
                 responseHandler: function(response){
                     var array = JSON.parse(response).data
                                     .map(v=>v.attributes.titles.en || v.attributes.titles.en_jp)
-                                    .filter(v=>v)
+                                    .filter(v=>v) // remove false/undefined values
                     console.log(array, 'array')
                     return array
                 },
+            },
+            fixSearch : function(str){
+                return str.toLowerCase()
             },
             // manualAjax: function(value){
             //     return new Promise(function(resolve, reject){
@@ -53,7 +57,7 @@
             // },
 
             submitHandler: function(str){
-                alert("Searched: "+str)
+                console.log("Searched: "+str)
             }
         })
     </script>

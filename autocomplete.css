@@ -1,0 +1,67 @@
+.ac-hidden{
+    display: none;
+}
+.ac-wrapper{
+    position: relative;
+    display: inline-block;
+}
+.ac-wrapper input{
+    padding-right: 20px;
+}
+.ac-wrapper .ac-suggestion-list{ 
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    text-align: left;
+    background-color: white;
+    max-width: 100%;
+    z-index: 5;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+}
+.ac-wrapper .ac-autocomplete-clear-icon{
+    position: absolute;
+    top: 0;
+    right: 0; 
+    width: 20px;
+    height: 100%;
+    background-image: url(clear.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ac-wrapper .ac-autocomplete-clear-icon:hover{
+    cursor: pointer;
+}
+.ac-wrapper .ac-suggestion-list div.autocomplete-result { 
+    max-width: 100%;
+    display: flex;
+}
+.ac-wrapper .ac-suggestion-list div:hover { 
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+.ac-wrapper .ac-suggestion-list div.active { 
+    background-color: #e4e2e2;
+}
+.ac-wrapper .ac-suggestion-list div.autocomplete-text { 
+    padding: 5px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+.ac-wrapper .ac-suggestion-list div.autocomplete-mobile-icon { 
+    display: none;
+    flex-shrink: 0;
+    width: 20px;
+    background-image: url(arrow-top-left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@media screen and (max-width: 768px) {
+    .ac-wrapper .ac-suggestion-list div.autocomplete-mobile-icon { 
+        display: initial;
+    }
+}
