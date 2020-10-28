@@ -53,7 +53,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
 
     function blur(){
         cancelAjaxSearch()
-        clearList()
+        // clearList()
     }
 
     function inputChange(){
