@@ -27,14 +27,10 @@ Add JS onto your html
 ```html
 <script src="/js/autocomplete.js"></script>
 ```
-Add either raw or default CSS styles to your html
-(feel free to change any CSS according to your html)
+Add CSS onto your html. You can omit the second onw if you do not want any UI styling as in examples
 ```html
 <link rel="stylesheet" href="/css/autocomplete.css">
-```
-If you do not want custom styling as in examples here is the css with only core styles
-```html
-<link rel="stylesheet" href="/css/autocomplete-core.css">
+<link rel="stylesheet" href="/css/autocomplete-theme.css">
 ```
 
 ### CDN
@@ -42,7 +38,7 @@ You can also use below CDN links. Feel free to change version number with respec
 ```html
 <script src="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/js/autocomplete.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/css/autocomplete.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/css/autocomplete-core.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/css/autocomplete-theme.css">
 ```
 
 Initialize Autocomplete object with your configurations

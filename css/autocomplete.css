@@ -8,14 +8,7 @@
 .ac-wrapper input{
     padding-right: 40px;
 }
-.ac-wrapper input.ac-list-open{
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
 .ac-wrapper .ac-suggestion-list{ 
-    font-family: sans-serif;
-    font-size: 15px;
-    color: #4a5568;
     width: 100%;
     position: absolute;
     left: 0px;
@@ -27,12 +20,11 @@
     overflow: hidden;
     border: 1px solid #e8e8e8;
     border-top: none;
-    box-sizing: border-box;
 }
 .ac-wrapper .ac-autocomplete-clear-icon{
     position: absolute;
     top: 0;
-    right: 10px; 
+    right: 0; 
     width: 20px;
     height: 100%;
     background-image: url(../img/clear.svg);
@@ -45,7 +37,7 @@
 .ac-wrapper .ac-autocomplete-loading-icon{
     position: absolute;
     top: 0;
-    right: 40px; 
+    right: 20px; 
     width: 20px;
     height: 100%;
     background-image: url(../img/loading.svg);
@@ -71,8 +63,7 @@
     background-color: #e4e2e2;
 }
 .ac-wrapper .ac-suggestion-list div.autocomplete-text { 
-    padding: 10px 20px 10px 20px;
-    line-height: 1.5;
+    padding: 5px 0px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -82,7 +73,6 @@
     display: none;
     flex-shrink: 0;
     width: 20px;
-    padding: 0 10px;
     background-image: url(../img/arrow-top-left.svg);
     background-repeat: no-repeat;
     background-position: center;
