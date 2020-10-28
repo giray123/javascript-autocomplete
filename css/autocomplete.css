@@ -35,7 +35,7 @@
     right: 10px; 
     width: 20px;
     height: 100%;
-    background-image: url(/img/clear.svg);
+    background-image: url(../img/clear.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -48,7 +48,7 @@
     right: 40px; 
     width: 20px;
     height: 100%;
-    background-image: url(/img/loading.svg);
+    background-image: url(../img/loading.svg);
     background-repeat: no-repeat;
     background-position: center;
     -webkit-animation:spin 1s linear infinite;
@@ -83,7 +83,7 @@
     flex-shrink: 0;
     width: 20px;
     padding: 0 10px;
-    background-image: url(/img/arrow-top-left.svg);
+    background-image: url(../img/arrow-top-left.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
