@@ -156,4 +156,4 @@ Screen sizes below 768px also display arrows on suggestion list so that users co
 <p align="center"><img src="img/mobile_friendly.gif" style="margin: 20px;"></p>
 
 ## LICENSE
-This project is ![](license)licensed under the terms of the MIT license.
+This project is [licensed]("https://github.com/giray123/javascript-autocomplete/blob/master/LICENSE") under the terms of the MIT license.
