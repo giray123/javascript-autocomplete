@@ -1,14 +1,15 @@
 <h1 align="center">Javascript Autocomplete</h1>
 <p align="center">Autocomplete snippet for HTML input fields</p>
-<p align="center"><img src="img/search_wihtout_ajax.gif"></p>
+<p align="center"><img src="img/search_auto_ajax.gif"></p>
 
-This snippet is:
-- native javascript
-- no dependencies
-- with OR without AJAX
-- highy customizable yet very simple
+This snippet:
+- is built with **native javascript**
+- requires **no dependencies**
+- can be used **with OR without AJAX**
+- highy **customizable** yet very **simple**
+- user experience is **inspired from Google search**
 
-## Quick Start
+## Usage
 
 Add JS onto your html
 ```html
@@ -125,9 +126,30 @@ var autocomplete = new Autocomplete({
 })
 ```
 
-## Options
-
-## Mobile Friendly
+## Configuration
+### Global Options
+| attribute  | type | default | description |
+| -------------       | -------- | ---- | ------------- |
+| `selector`            | string   | required | html input element query selector (`document.querySelector(selector)`)
+| `minChar`             | integer  | `0`    | minimum number of letters for search to start
+| `delay`               | integer  | `500`  | milliseconds after which search starts if there is no other input by the user
+| `list`                | array    | optional | array of strings to search for. This automatically disables AJAX calls.
+| `customSearch`        | function | optional | if ***list*** is provided, this will override the default list search function 
+| `extraParentClasses`  | string   | optional | any additional classes for the wrapper element
+| `ajax`                | object   | optional | configuration object in case of using built-in XMLHttpRequest AJAX requests. Object attributes are listed below.
+| `beforeAjax`          | function | optional | this function manipulates the user input before search starts. For example, you can make the input lowercase
+| `manualAjax`          | function | optional | this function is for a custom AJAX function istead of the built-in XMLHttpRequest. It should return a promise. Please see the example.
+| `submitHandler`       | function | required | this function defines what to do when user submits an input after autocomplete, presses enter on any autocomplete suggestion etc.
+| `highlight`           | boolean  | `true` | when enabled, autocomplete list will highligh search string on autocomplete rows 
+### Built-in XMLHttpRequest Ajax Options
+| attribute  | type | default | description |
+| -------------       | -------- | ---- | ------------- |
+| `ajax.method`         | string   | `"GET"`| built-in XMLHttpRequest AJAX method
+| `ajax.url`            | url      | required | built-in XMLHttpRequest AJAX method
+| `ajax.withCredentials`| boolean  | `false`| whether to send credentials with built-in XMLHttpRequest AJAX
+| `ajax.fields`         | object   | `"?search="`| query parameters to append to url
+| `ajax.responseHandler`| object   | optional | when AJAX returns any response this function is used to manipulate the response. It must return an array of strings.
+## Mobile Friendliness
 
 Screen sizes below 768px also display arrows on suggestion list so that users could tap and copy the value onto the search field without submitting a search.
 

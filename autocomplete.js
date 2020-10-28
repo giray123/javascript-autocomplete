@@ -159,6 +159,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
             if(customSearch){
                 results = customSearch(search, list)
             }else{
+                // defult list search wihtout custimSearch
                 var regexp = new RegExp("^"+search.toLowerCase().trim()+".*$")
                 results = list.filter(v=>regexp.test(v)).sort()
             }
@@ -171,7 +172,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
             $icon_loading.classList.add("ac-hidden")
         }else{
             var request = new XMLHttpRequest();
-            request.open(ajax.method, ajax.url+ajax.fields+search, true);
+            request.open(ajax.method, ajax.url+(ajax.fields||"?search=")+search, true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
             request.onreadystatechange = function() {
                 if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
