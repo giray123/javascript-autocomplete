@@ -12,7 +12,7 @@
 <p align="center"><img src="img/search_auto_ajax.gif"></p>
 
 This snippet:
-- is built with **native javascript**
+- :fire:  is built with **native javascript**
 - requires **no dependencies**
 - can be used **with OR without AJAX**
 - highy **customizable** yet very **simple**
@@ -22,16 +22,26 @@ This snippet:
 
 Add JS onto your html
 ```html
-<script src="autocomplete.js"></script>
+<script src="/js/autocomplete.js"></script>
 ```
 Add either raw or default CSS styles to your html
 (feel free to change any CSS according to your html)
 ```html
-<!-- bare minimum styles -->
-<link rel="stylesheet" href="/css/autocomplete-raw.css">
-<!-- bare minimum styles + a little bit more CSS for better UI -->
-<link rel="stylesheet" href="/css/autocomplete-default.css">
+<link rel="stylesheet" href="/css/autocomplete.css">
 ```
+If you do not want custom styling as in examples here is the css with only core styles
+```html
+<link rel="stylesheet" href="/css/autocomplete-core.css">
+```
+
+### CDN
+You can also use below CDN links
+```html
+<script src="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/js/autocomplete.css"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/css/autocomplete.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/css/autocomplete-core.css">
+```
+
 Initialize Autocomplete object with your configurations
 ### Without AJAX
 <p align="center"><img src="img/search_wihtout_ajax.gif" style="margin: 20px;"></p>

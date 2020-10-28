@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/autocomplete-raw.css">
-    <link rel="stylesheet" href="/css/autocomplete-default.css">
+    <link rel="stylesheet" href="/css/autocomplete.css">
+    <!-- use below for only core CSS without extra styling -->
+    <!-- <link rel="stylesheet" href="/css/autocomplete-default.css"> -->
     <style>
         body{
             font-family: sans-serif;
@@ -52,6 +53,18 @@
     <div id="main">
         <h1>Autocomplete for Native Javascript</h1>
         <p>autocomplete snippet for HTML input fields build with native javascript and no dependencies</p>
+        <p>
+            This snippet:
+            <ul>
+                <li>is built with **native javascript**</li>
+                <li>is built with <b>native javascript</b></li>
+                <li>requires <b>no dependencies</b></li>
+                <li>can be used <b>with OR without AJAX</b></li>
+                <li>highy <b>customizable</b> yet very <b>simple</b></li>
+                <li>user experience is <b>inspired from Google search</b></li>
+            </ul>
+
+        </p>
 
         <h2>Without AJAX (list array)</h2>
         <p>Search for 'apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'</p>
@@ -68,7 +81,7 @@
         <h2>Custom AJAX Handler</h2>
         <input id="search_manual_ajax" class="ac-input-default" type="text" placeholder="Search..." autocomplete="off">
     </div>
-    <script src="autocomplete.js"></script>
+    <script src="/js/autocomplete.js"></script>
     <script>
         var autocomplete = new Autocomplete({
             selector: "#search_wihtout_ajax",
