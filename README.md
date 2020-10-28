@@ -1,0 +1,1 @@
+https://kitsu.docs.apiary.io/#introduction/json:api/sorting
