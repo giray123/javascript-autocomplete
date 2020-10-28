@@ -9,12 +9,48 @@
 <body>
     <h1>Autocomplete for Native Javascript</h1>
     
-    <input id="search" type="text" placeholder="Search..." autocomplete="off">
+    <h2>Without AJAX (list array)</h2>
+    <p>Search for 'apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'</p>
+    <input id="search_wihtout_ajax" type="text" placeholder="Search..." autocomplete="off">
+
+    <h2>Without AJAX (list array) and Custom Search Function</h2>
+    <p>Search for 'apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'</p>
+    <input id="search_wihtout_ajax_custom_search" type="text" placeholder="Search..." autocomplete="off">
+
+    <h2>Built-in AJAX</h2>
+    <p>Search for anime names</p>
+    <input id="search_auto_ajax" type="text" placeholder="Search..." autocomplete="off">
+
+    <h2>Custom AJAX Handler</h2>
+    <input id="search_manual_ajax" type="text" placeholder="Search..." autocomplete="off">
     
     <script src="autocomplete.js"></script>
     <script>
         var autocomplete = new Autocomplete({
-            selector: "#search",
+            selector: "#search_wihtout_ajax",
+            minChar: 1,
+            delay: 100,
+            list: ['apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'],
+            submitHandler: function(str){
+                console.log("Searched: "+str)
+            }
+        })
+        var autocomplete = new Autocomplete({
+            selector: "#search_wihtout_ajax_custom_search",
+            minChar: 1,
+            delay: 100,
+            list: ['apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'],
+            customSearch: function(value, list){
+                var regexp = new RegExp(value.toLowerCase().trim())
+                var results = list.filter(v=>regexp.test(v)).sort()
+                return results
+            },
+            submitHandler: function(str){
+                console.log("Searched: "+str)
+            }
+        })
+        var autocomplete = new Autocomplete({
+            selector: "#search_auto_ajax",
             minChar: 1,
             maxListHeight: 400,
             ajax: {
@@ -30,32 +66,41 @@
                     return array
                 },
             },
-            fixSearch : function(str){
-                return str.toLowerCase()
+            beforeAjax : function(search){
+                return search.toLowerCase()
             },
-            // manualAjax: function(value){
-            //     return new Promise(function(resolve, reject){
-            //         var request = new XMLHttpRequest();
-            //         request.open('GET', 'https://kitsu.io/api/edge/anime?fields[anime]=titles&page[limit]=20&filter[text]='+value, true);
-            //         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-            //         request.onreadystatechange = function() {
-            //             if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-            //                 console.log('succeed');
-            //                 console.log(request.responseText);
-            //                 var array = JSON.parse(request.responseText).data.map(v=>v.attributes.titles.en || v.attributes.titles.en_jp)
-            //                 resolve(array)
-            //             }else{
-            //                 console.log('server error');
-            //             }
-            //         };
-            //         request.onerror = function(e) {
-            //             console.log('something went wrong');
-            //             reject(e)
-            //         };
-            //         request.send();
-            //     })
-            // },
-
+            submitHandler: function(str){
+                console.log("Searched: "+str)
+            }
+        })
+        var autocomplete = new Autocomplete({
+            selector: "#search_manual_ajax",
+            minChar: 1,
+            manualAjax: function(value){
+                return new Promise(function(resolve, reject){
+                    var request = new XMLHttpRequest();
+                    request.open('GET', 'https://kitsu.io/api/edge/anime?fields[anime]=titles&page[limit]=10&filter[text]='+value, true);
+                    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                    request.onreadystatechange = function() {
+                        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                            console.log('succeed');
+                            console.log(request.responseText);
+                            var array = JSON.parse(request.responseText).data.map(v=>v.attributes.titles.en || v.attributes.titles.en_jp)
+                            resolve(array)
+                        }else{
+                            console.log('server error');
+                        }
+                    };
+                    request.onerror = function(e) {
+                        console.log('something went wrong');
+                        reject(e)
+                    };
+                    request.send();
+                })
+            },
+            beforeAjax : function(search){
+                return search.toLowerCase()
+            },
             submitHandler: function(str){
                 console.log("Searched: "+str)
             }

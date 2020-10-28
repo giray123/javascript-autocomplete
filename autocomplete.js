@@ -1,4 +1,4 @@
-var Autocomplete = function({selector, minChar, extraParentClasses, ajax, fixSearch, manualAjax, submitHandler, delay, highlight}){
+var Autocomplete = function({selector, minChar, list, customSearch, extraParentClasses, ajax, beforeAjax, manualAjax, submitHandler, delay, highlight}){
     // variable declerations
     var processId   = null,
         $input      = document.querySelector(selector),
@@ -35,6 +35,11 @@ var Autocomplete = function({selector, minChar, extraParentClasses, ajax, fixSea
             $input.focus()
             $icon_clear.classList.add("ac-hidden")
         }
+    // create a loading icon
+    var $icon_loading = document.createElement('div');
+        $icon_loading.classList.add("ac-autocomplete-loading-icon", "ac-hidden")
+        $icon_loading.title = "loading"
+        $wrapper.appendChild($icon_loading);
 
     // create suggestion list
     var $list = document.createElement('div')
@@ -48,7 +53,7 @@ var Autocomplete = function({selector, minChar, extraParentClasses, ajax, fixSea
 
     function blur(){
         cancelAjaxSearch()
-        // $list.innerHTML = "";
+        $list.innerHTML = "";
     }
 
     function inputChange(){
@@ -136,19 +141,31 @@ var Autocomplete = function({selector, minChar, extraParentClasses, ajax, fixSea
     }
 
     async function startAjaxSearch(search){
+        var search = search
         if(search.length < minChar) return
 
-        if(fixSearch){ search = fixSearch(search)}
+        $icon_loading.classList.remove("ac-hidden")
+        if(beforeAjax){ search = beforeAjax(search)}
 
-        var results = []
-        if(manualAjax){
-            var results = await manualAjax(search);
-            console.log(results, 'results')
+        if(list){
+            var results = []
+            if(customSearch){
+                results = customSearch(search, list)
+            }else{
+                var regexp = new RegExp("^"+search.toLowerCase().trim()+".*$")
+                results = list.filter(v=>regexp.test(v)).sort()
+            }
             showAutocompleteList(results, search)
+            $icon_loading.classList.add("ac-hidden")
+        }else if(manualAjax){
+            console.log(results, 'results')
+            var results = await manualAjax(search);
+            showAutocompleteList(results, search)
+            $icon_loading.classList.add("ac-hidden")
         }else{
             var request = new XMLHttpRequest();
             request.open(ajax.method, ajax.url+ajax.fields+search, true);
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
             request.onreadystatechange = function() {
                 if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
                     console.log('succeed');
@@ -156,15 +173,19 @@ var Autocomplete = function({selector, minChar, extraParentClasses, ajax, fixSea
                     if(ajax.responseHandler){
                         results = ajax.responseHandler(request.responseText)
                         showAutocompleteList(results, search)
+                        $icon_loading.classList.add("ac-hidden")
                     }else{
                         showAutocompleteList(request.responseText, search)
+                        $icon_loading.classList.add("ac-hidden")
                     }
                 }else{
                     console.log('server error');
+                    $icon_loading.classList.add("ac-hidden")
                 }
             };
             request.onerror = function(e) {
                 console.log('something went wrong');
+                $icon_loading.classList.add("ac-hidden")
                 console.log(e)
             };
             request.send();
