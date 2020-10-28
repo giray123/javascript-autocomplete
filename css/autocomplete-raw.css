@@ -27,7 +27,7 @@
     right: 0; 
     width: 20px;
     height: 100%;
-    background-image: url(clear.svg);
+    background-image: url(/img/clear.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -40,7 +40,7 @@
     right: 20px; 
     width: 20px;
     height: 100%;
-    background-image: url(loading.svg);
+    background-image: url(/img/loading.svg);
     background-repeat: no-repeat;
     background-position: center;
     -webkit-animation:spin 1s linear infinite;
@@ -73,7 +73,7 @@
     display: none;
     flex-shrink: 0;
     width: 20px;
-    background-image: url(arrow-top-left.svg);
+    background-image: url(/img/arrow-top-left.svg);
     background-repeat: no-repeat;
     background-position: center;
 }

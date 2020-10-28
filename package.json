@@ -1,0 +1,26 @@
+{
+  "name": "javascript-autocomplete",
+  "version": "1.0.0",
+  "description": "autocomplete snippet for HTML input fields build with native javascript and no dependencies",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giray123/javascript-autocomplete.git"
+  },
+  "keywords": [
+    "autocomplete",
+    "javascript",
+    "html",
+    "input",
+    "ajax"
+  ],
+  "author": "giray songul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/giray123/javascript-autocomplete/issues"
+  },
+  "homepage": "https://github.com/giray123/javascript-autocomplete#readme"
+}

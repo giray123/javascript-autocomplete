@@ -4,26 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="autocomplete.css">
+    <link rel="stylesheet" href="/css/autocomplete-raw.css">
+    <link rel="stylesheet" href="/css/autocomplete-default.css">
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+            padding-bottom: 400px;
+        }
+        #main{
+            width: 100%;
+            text-align: left;
+        }
+        h1{
+            margin-top: 60px;
+        }
+        h2{
+            margin-top: 60px;
+        }
+        @media screen and (min-width: 768px) {
+            #main{
+                width: 30%;
+                margin: auto;
+            }
+        }
+        input.ac-input-default{
+            width: 350px;
+            transition: all .25s ease-out;
+            color: #4a5568;
+            padding: 10px 20px 10px 20px;
+            line-height: 1.5;
+            border-width: 1px;
+            border-radius: .5rem;
+            border-color: transparent;
+            background-color: #edf2f7;
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+        input.ac-input-default:focus{
+            outline: none;
+            background-color: white;
+            border: 1px solid #edf2f7;
+        }
+    </style>
 </head>
 <body>
-    <h1>Autocomplete for Native Javascript</h1>
-    
-    <h2>Without AJAX (list array)</h2>
-    <p>Search for 'apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'</p>
-    <input id="search_wihtout_ajax" type="text" placeholder="Search..." autocomplete="off">
+    <div id="main">
+        <h1>Autocomplete for Native Javascript</h1>
+        <p>autocomplete snippet for HTML input fields build with native javascript and no dependencies</p>
 
-    <h2>Without AJAX (list array) and Custom Search Function</h2>
-    <p>Search for 'apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'</p>
-    <input id="search_wihtout_ajax_custom_search" type="text" placeholder="Search..." autocomplete="off">
+        <h2>Without AJAX (list array)</h2>
+        <p>Search for 'apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'</p>
+        <input id="search_wihtout_ajax" class="ac-input-default" type="text" placeholder="Search..." autocomplete="off">
 
-    <h2>Built-in AJAX</h2>
-    <p>Search for anime names</p>
-    <input id="search_auto_ajax" type="text" placeholder="Search..." autocomplete="off">
+        <h2>Without AJAX (list array) and Custom Search Function</h2>
+        <p>Search for 'apple', 'applepie', 'abacus', 'grape', 'watermelon', 'cherry'</p>
+        <input id="search_wihtout_ajax_custom_search" class="ac-input-default" type="text" placeholder="Search..." autocomplete="off">
 
-    <h2>Custom AJAX Handler</h2>
-    <input id="search_manual_ajax" type="text" placeholder="Search..." autocomplete="off">
-    
+        <h2>Built-in AJAX</h2>
+        <p>Search for anime names</p>
+        <input id="search_auto_ajax" class="ac-input-default" type="text" placeholder="Search..." autocomplete="off">
+
+        <h2>Custom AJAX Handler</h2>
+        <input id="search_manual_ajax" class="ac-input-default" type="text" placeholder="Search..." autocomplete="off">
+    </div>
     <script src="autocomplete.js"></script>
     <script>
         var autocomplete = new Autocomplete({

@@ -30,7 +30,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
 
         function iconClearClick(){
             $input.value = ""
-            $list.innerHTML = ""
+            clearList()
             cancelAjaxSearch()
             $input.focus()
             $icon_clear.classList.add("ac-hidden")
@@ -43,7 +43,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
 
     // create suggestion list
     var $list = document.createElement('div')
-        $list.classList.add('ac-suggestion-list')
+        $list.classList.add('ac-suggestion-list', 'ac-hidden')
         $wrapper.appendChild($list);
 
     // input event listeners
@@ -53,7 +53,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
 
     function blur(){
         cancelAjaxSearch()
-        $list.innerHTML = "";
+        clearList()
     }
 
     function inputChange(){
@@ -121,16 +121,16 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
         else if(keycode == 13){ // ENTER
             cancelAjaxSearch()
             event.preventDefault()
-            $list.innerHTML = "";
+            clearList()
             submitHandler($input.value)
             return false;
         }
         else if(keycode == 27){ // ESCAPE
-            $list.innerHTML = "";
+            clearList()
             return false;
         }
         else if(keycode == 9){ // TAB
-            // $list.innerHTML = "";
+            // clearList()
         }
         else if(keycode == 37 || keycode == 39){ // LEFT - RIGHT
             // do nothing
@@ -138,6 +138,11 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
     }
     function cancelAjaxSearch(){
         clearTimeout(processId)
+    }
+    function clearList(){
+        $list.innerHTML = "";
+        $list.classList.add("ac-hidden")
+        $input.classList.remove("ac-list-open")
     }
 
     async function startAjaxSearch(search){
@@ -222,6 +227,8 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
                         $mobile_icon.addEventListener('mousedown', resultIconClick)
                         $result.appendChild($mobile_icon)
             }
+            $list.classList.remove("ac-hidden", "ac-list-open")
+            $input.classList.add("ac-list-open")
         }
         // reset active index
         activeIndex = -1;
@@ -232,7 +239,7 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
         if(e.which != 1) return; // only progress on left mouse clicks
         console.log('resultClick')
         $input.value = e.currentTarget.innerText
-        $list.innerHTML = ""
+        clearList()
         submitHandler($input.value)
     }
     function resultIconClick(e){
