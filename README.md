@@ -18,6 +18,9 @@ This snippet:
 - :hammer_and_pick: highy **customizable** yet very **simple**
 - :heart_eyes: user experience is **inspired from Google search**
 
+## Demo
+- [JSfiddle]()
+- [Github Pages](https://giray123.github.io/javascript-autocomplete/)
 ## Usage
 
 Add JS onto your html
@@ -37,7 +40,7 @@ If you do not want custom styling as in examples here is the css with only core 
 ### CDN
 You can also use below CDN links
 ```html
-<script src="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/js/autocomplete.css"></script>
+<script src="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/js/autocomplete.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/css/autocomplete.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh//giray123/javascript-autocomplete@v1.1/css/autocomplete-core.css">
 ```
