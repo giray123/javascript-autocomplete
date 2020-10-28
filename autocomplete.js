@@ -61,6 +61,8 @@ var Autocomplete = function({selector, minChar, list, customSearch, extraParentC
         input_backup = $input.value
         if(input_backup != ""){
             processId = setTimeout(()=>{startAjaxSearch(input_backup)}, delay)
+        }else{
+            clearList()
         }
         checkIconClear()
     }

@@ -1,8 +1,12 @@
-# Javascript Autocomplete
-Autocomplete snippet for HTML input fields build with:
+<h1 align="center">Javascript Autocomplete</h1>
+<p align="center">Autocomplete snippet for HTML input fields</p>
+<p align="center"><img src="img/search_wihtout_ajax.gif"></p>
+
+This snippet is:
 - native javascript
 - no dependencies
 - with OR without AJAX
+- highy customizable yet very simple
 
 ## Quick Start
 
@@ -20,6 +24,8 @@ Add either raw or default CSS styles to your html
 ```
 Initialize Autocomplete object with your configurations
 ### Without AJAX
+<p align="center"><img src="img/search_wihtout_ajax.gif" style="margin: 20px;"></p>
+
 ```js
 var autocomplete = new Autocomplete({
     selector: "#search_wihtout_ajax",
@@ -32,6 +38,8 @@ var autocomplete = new Autocomplete({
 })
 ```
 ### Without AJAX + Custom Search Function
+<p align="center"><img src="img/search_wihtout_ajax_custom_search.gif" style="margin: 20px;"></p>
+
 ```js
 var autocomplete = new Autocomplete({
     selector: "#search_wihtout_ajax_custom_search",
@@ -49,6 +57,8 @@ var autocomplete = new Autocomplete({
 })
 ```
 ### With AJAX + Builtin XMLHttpRequest Request
+<p align="center"><img src="img/search_auto_ajax.gif" style="margin: 20px;"></p>
+
 ```js
 var autocomplete = new Autocomplete({
     selector: "#search_auto_ajax",
@@ -76,6 +86,8 @@ var autocomplete = new Autocomplete({
 })
 ```
 ### With AJAX + Custom AJAX Handler
+<p align="center"><img src="img/search_manual_ajax.gif" style="margin: 20px;"></p>
+
 ```js
 var autocomplete = new Autocomplete({
     selector: "#search_manual_ajax",
@@ -112,3 +124,11 @@ var autocomplete = new Autocomplete({
     }
 })
 ```
+
+## Options
+
+## Mobile Friendly
+
+Screen sizes below 768px also display arrows on suggestion list so that users could tap and copy the value onto the search field without submitting a search.
+
+<p align="center"><img src="img/mobile_friendly.gif" style="margin: 20px;"></p>
