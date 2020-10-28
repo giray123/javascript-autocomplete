@@ -1,5 +1,5 @@
 <h1 align="center">Javascript Autocomplete</h1>
-<p align="center">Autocomplete snippet for HTML input fields</p>
+<p align="center">Autocomplete snippet for HTML input fields built with native javascript</p>
 <p align="center"><img src="img/search_auto_ajax.gif"></p>
 
 This snippet:
@@ -151,6 +151,9 @@ var autocomplete = new Autocomplete({
 | `ajax.responseHandler`| object   | optional | when AJAX returns any response this function is used to manipulate the response. It must return an array of strings.
 ## Mobile Friendliness
 
-Screen sizes below 768px also display arrows on suggestion list so that users could tap and copy the value onto the search field without submitting a search.
+Screen sizes below 768px also display arrows on suggestion list so that users could tap and copy the value onto the search field without submitting a value.
 
 <p align="center"><img src="img/mobile_friendly.gif" style="margin: 20px;"></p>
+
+## LICENSE
+This project is ![](license)licensed under the terms of the MIT license.
