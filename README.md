@@ -23,22 +23,32 @@ This snippet:
 - [Github Pages](https://giray123.github.io/javascript-autocomplete/)
 ## Usage
 
-Add JS onto your html
+Add either unminified or minified JS onto your html
 ```html
 <script src="/js/autocomplete.js"></script>
+<!-- minififed -->
+<script src="/js/autocomplete.min.js"></script>
 ```
-Add CSS onto your html. You can omit the second onw if you do not want any UI styling as in examples
+Add either unminified or minified CSS onto your html. You can omit the "theme" if you do not want any UI styling as in examples
 ```html
 <link rel="stylesheet" href="/css/autocomplete.css">
 <link rel="stylesheet" href="/css/autocomplete-theme.css">
+<!-- minififed -->
+<link rel="stylesheet" href="/css/autocomplete.min.css">
+<link rel="stylesheet" href="/css/autocomplete-theme.min.css">
 ```
 
 ### CDN
 You can also use below CDN links. Feel free to change version number with respect to the releases
 ```html
-<script src="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/js/autocomplete.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/css/autocomplete.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.2/css/autocomplete-theme.css">
+<script src="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.3/js/autocomplete.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.3/css/autocomplete.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.3/css/autocomplete-theme.css">
+<!-- minififed -->
+<script src="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.3/js/autocomplete.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.3/css/autocomplete.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/giray123/javascript-autocomplete@v1.3/css/autocomplete-theme.min.css">
+
 ```
 
 Initialize Autocomplete object with your configurations
@@ -167,6 +177,14 @@ var autocomplete = new Autocomplete({
 | `ajax.withCredentials`| boolean  | `false`| whether to send credentials with built-in XMLHttpRequest AJAX
 | `ajax.fields`         | object   | `"?search="`| query parameters to append to url
 | `ajax.responseHandler`| object   | optional | when AJAX returns any response this function is used to manipulate the response. It must return an array of strings.
+
+## Methods
+| attribute  | description |
+| -----------| ----------- |
+| `context()`  | returns information about the current state
+| `focus()`    | focuses the input element
+| `value()`    | changes the value of the input element
+
 ## Mobile Friendliness
 
 Screen sizes below 768px also display arrows on suggestion list so that users could tap and copy the value onto the search field without submitting a value.
