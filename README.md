@@ -3,8 +3,8 @@
 <p align="center">Autocomplete snippet for HTML input fields built with native javascript</p>
 <p align="center">
   <img src="https://img.shields.io/david/giray123/javascript-autocomplete?style=for-the-badge" />
-  <img src="https://img.shields.io/github/size/giray123/javascript-autocomplete/js/autocomplete.js?label=UNMINIFIED&logo=javascript&style=for-the-badge" />
-  <img src="https://img.shields.io/github/size/giray123/javascript-autocomplete/css/autocomplete.css?label=UNMINIFIED&logo=css3&logoColor=%231572B6&style=for-the-badge" />
+  <img src="https://img.shields.io/github/size/giray123/javascript-autocomplete/js/autocomplete.min.js?label=JS&logo=javascript&style=for-the-badge" />
+  <img src="https://img.shields.io/github/size/giray123/javascript-autocomplete/css/autocomplete.min.css?label=CSS&logo=css3&logoColor=%231572B6&style=for-the-badge" />
   <a href="https://github.com/giray123/javascript-autocomplete/blob/master/LICENSE"><img src="https://img.shields.io/github/license/giray123/javascript-autocomplete?style=for-the-badge" /></a>
 </p>
 
